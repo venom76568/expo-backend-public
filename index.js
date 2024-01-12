@@ -1,5 +1,6 @@
 // server.js
 const express = require('express');
+require("dotenv").config();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const registerRoute = require('./routes/register');
@@ -7,6 +8,7 @@ const mongooseConnect = require('./config/mongooseConnect');
 
 const app = express();
 const PORT = 5000;
+// console.log(process.env.MONGO_URL)
 
 // Enable CORS
 app.use(cors());
