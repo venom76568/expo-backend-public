@@ -5,7 +5,7 @@ const User = require('../models/User');
 
 router.post('/register', async (req, res) => {
   try {
-    const { name, email ,startUpSector,headquarter,linkedin,discription} = req.body;
+    const { name,phone,pname, email ,startUpSector,headquarter,linkedin,discription} = req.body;
 
     // Validate inputs (add more validation as needed)
     if (!name  || !email) {
@@ -19,7 +19,7 @@ router.post('/register', async (req, res) => {
     }
 
     // Create a new user
-    const newUser = new User({ name, email ,startUpSector,headquarter,linkedin,discription});
+    const newUser = new User({ name,pname,phone, email ,startUpSector,headquarter,linkedin,discription});
 
     // Save the user to the database
     await newUser.save();
