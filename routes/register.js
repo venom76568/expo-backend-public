@@ -3,6 +3,18 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 
+router.get("/all", async (req, res) => {
+  try {
+    const allData = await User.find({});
+    res.json({ data: allData });
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+// pages/api/users.js
+
+
 router.post('/register', async (req, res) => {
   try {
     const { name,phone,pname, email ,startUpSector,headquarter,linkedin,discription} = req.body;
