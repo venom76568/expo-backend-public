@@ -1,34 +1,22 @@
 // server.js
-const express = require('express');
-require("dotenv").config();
-const cors = require('cors');
-const bodyParser = require('body-parser');
-const registerRoute = require('./routes/register');
-const mongooseConnect = require('./config/mongooseConnect');
-
-
+const express = require("express");
+const connectDB = require("./config/mongooseConnect");
+const registerRoutes = require("./routes/register");
+require("dotenv").config(); // Load environment variables from .env file
 
 const app = express();
-const PORT = 5000;
-// console.log(process.env.MONGO_URL)
+const PORT = process.env.PORT || 5000; // Use environment variable or default to 5000
 
-// Enable CORS
-app.use(cors());
-
-// app.use((req, res, next) => {
-//   res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
-//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-//   next();
-// });
-// Middleware to parse JSON in request body
-app.use(bodyParser.json());
+// Middleware to parse JSON request bodies
+app.use(express.json());
 
 // Connect to MongoDB
-mongooseConnect();
+connectDB();
 
-// Routes
-app.use('/api', registerRoute);
+// Register routes
+app.use("/api/register", registerRoutes);
 
+// Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
