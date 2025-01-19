@@ -3,7 +3,7 @@ const cors = require("cors");
 const app = express();
 
 // Middleware
-app.use(cors()); // Enable CORS for all routes
+// app.use(cors()); // Enable CORS for all routes
 app.use(express.json());
 const router = express.Router();
 const User = require("../models/User");
