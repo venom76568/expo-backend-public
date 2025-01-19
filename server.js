@@ -7,7 +7,15 @@ require("dotenv").config(); // Load environment variables from .env file
 
 const app = express();
 const PORT = process.env.PORT || 5000; // Use environment variable or default to 5000
-app.use(cors({ origin: "https://expo.ecellvnit.org/", credentials: true }));
+
+const corsOptions = {
+  origin: ["http://localhost:5000", "https://expo.ecellvnit.org/"], // Allow specific origins
+  methods: ["GET", "POST", "OPTIONS"], // Allowed HTTP methods
+  allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+  credentials: true, // Allow cookies and authorization headers
+};
+
+app.use(cors(corsOptions));
 // Middleware to parse JSON request bodies
 app.use(express.json());
 
@@ -15,7 +23,7 @@ app.use(express.json());
 connectDB();
 
 // Register routes
-app.use(registerRoutes);
+app.use("/register", registerRoutes);
 
 // Start the server
 app.listen(PORT, () => {
