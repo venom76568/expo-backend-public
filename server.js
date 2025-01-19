@@ -23,7 +23,7 @@ app.use(express.json());
 connectDB();
 
 // Register routes
-app.use("/register", registerRoutes);
+app.use(registerRoutes);
 
 // Start the server
 app.listen(PORT, () => {
