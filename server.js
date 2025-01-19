@@ -14,7 +14,7 @@ app.use(express.json());
 connectDB();
 
 // Register routes
-app.use("/api/register", registerRoutes);
+app.use(registerRoutes);
 
 // Start the server
 app.listen(PORT, () => {
