@@ -9,7 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 5000; // Use environment variable or default to 5000
 
 const corsOptions = {
-  origin: ["http://localhost:5000", "https://expo.ecellvnit.org/"], // Allow specific origins
+  origin: ["http://localhost:3000", "https://expo.ecellvnit.org/"], // Allow specific origins
   methods: ["GET", "POST", "OPTIONS"], // Allowed HTTP methods
   allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
   credentials: true, // Allow cookies and authorization headers
