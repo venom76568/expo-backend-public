@@ -1,7 +1,7 @@
 // server.js
 const express = require("express");
 const connectDB = require("./config/mongooseConnect");
-import cors from "cors";
+const cors = require("cors");
 const registerRoutes = require("./routes/register");
 require("dotenv").config(); // Load environment variables from .env file
 
