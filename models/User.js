@@ -13,6 +13,6 @@ const userSchema = new mongoose.Schema({
   challan: String,
 });
 
-const User = mongoose.model("User", userSchema, "users");
+const User = mongoose.model("User", userSchema, "user1");
 
 module.exports = User;
