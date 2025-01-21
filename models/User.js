@@ -10,6 +10,7 @@ const userSchema = new mongoose.Schema({
   headquarter: String,
   linkedin: String,
   discription: String,
+  challan: String,
 });
 
 const User = mongoose.model("User", userSchema, "users");

@@ -29,6 +29,7 @@ router.post("/register", async (req, res) => {
       headquarter,
       linkedin,
       discription,
+      challan,
     } = req.body;
 
     // Validate inputs (add more validation as needed)
@@ -54,6 +55,7 @@ router.post("/register", async (req, res) => {
       headquarter,
       linkedin,
       discription,
+      challan,
     });
 
     // Save the user to the database
