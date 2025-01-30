@@ -12,7 +12,7 @@ const corsOptions = {
   origin: [
     "http://localhost:3000",
     "https://expo.ecellvnit.org",
-    "https://expo-regis-live.vercel.app/",
+    "https://expo-regis-live.vercel.app",
   ], // Allow specific origins
   methods: ["GET", "POST", "OPTIONS"], // Allowed HTTP methods
   allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
